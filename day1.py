@@ -18,7 +18,7 @@ def day1P2(input):
             print(txt.format(index))
             break
 
-f = open("test.txt")
+f = open("day1.txt")
 input = f.readline()
 day1P1(input)
 day1P2(input)
