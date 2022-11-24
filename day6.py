@@ -1,16 +1,17 @@
 def toggle(start, end):
     for i in range(start[0],end[0]+1):
         for j in range(start[1],end[1]+1):
-            grid[i][j] = 1 - grid[i][j]
+            grid[i][j] = grid[i][j] + 2
 
 def off(start, end):
     for i in range(start[0],end[0]+1):
         for j in range(start[1],end[1]+1):
-            grid[i][j] = 0
+            if grid[i][j] > 0:
+                grid[i][j] = grid[i][j] -1
 def on(start, end):
     for i in range(start[0],end[0]+1):
         for j in range(start[1],end[1]+1):
-            grid[i][j] = 1
+            grid[i][j] = grid[i][j]+1 
 
 grid = []
 #initialize grid
@@ -37,7 +38,8 @@ for input in f:
 #     print(x)
 
 count = 0
-for x in grid:
-    count = count + x.count(1)
+for i in range(0,1000):
+    for j in range(0,1000):
+        count = count + grid[i][j]
 
 print("Count: " , count)
